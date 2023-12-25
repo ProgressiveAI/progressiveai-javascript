@@ -1,6 +1,6 @@
 {
   "name": "progressiveai",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "This repository contains the JavaScript library for ProgressiveAI, a powerful tool for interacting with AI Models. The library provides a simple and intuitive interface for sending requests to ProgressiveAI's AI Models and processing their responses.",
   "main": "index.js",
   "scripts": {
