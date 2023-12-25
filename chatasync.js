@@ -1,4 +1,5 @@
 const axios = require("axios");
+const APIError = require("./exceptions");
 
 class ChatAsync {
   constructor(apiKey, text, model) {
@@ -24,6 +25,10 @@ class ChatAsync {
       if (response.status !== 200) {
         handleHTTPError(response.status);
         return null;
+      }
+
+      if ("error" in data) {
+        throw new APIError(data.error);
       }
 
       return data.response;

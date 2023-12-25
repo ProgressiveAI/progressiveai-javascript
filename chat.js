@@ -1,4 +1,5 @@
 const axios = require("axios");
+const APIError = require("./exceptions");
 
 class Chat {
   constructor(apiKey, text, model) {
@@ -26,7 +27,7 @@ class Chat {
       }
 
       if ("error" in data) {
-        throw new Error(data.error);
+        throw new APIError(data.error);
       }
 
       return data.response;

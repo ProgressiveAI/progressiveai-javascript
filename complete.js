@@ -1,4 +1,5 @@
 const axios = require("axios");
+const APIError = require("./exceptions");
 
 class Complete {
   constructor(apiKey, text, model) {
@@ -28,7 +29,7 @@ class Complete {
       }
 
       if ("error" in data) {
-        throw new Error(data.error);
+        throw new APIError(data.error);
       }
 
       return data.response;
